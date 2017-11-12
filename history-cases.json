@@ -1,0 +1,148 @@
+{
+  "hists" : [ {
+    "key" : "eca6fed9-b576-4d1d-96d3-4bcbd712345c",
+    "result" : null,
+    "assertBdy" : true,
+    "cause" : null,
+    "request" : {
+      "url" : "http://127.0.0.1:8080/wit-rest/account",
+      "method" : "POST",
+      "body" : "{\n  \"userName\": \"witpool-user\",\n  \"password\": \"user123\",\n  \"cellPhone\": \"123456789\",\n  \"email\": \"user@witpool.org\"\n}",
+      "date" : "2017-11-11 22:50:46.724",
+      "headers" : {
+        "Content-Type" : "application/json; charset=UTF-8",
+        "Accept" : "application/json"
+      },
+      "cookies" : { }
+    },
+    "response" : {
+      "body" : "{\r\n  \"instance\" : {\r\n    \"userId\" : 2,\r\n    \"userName\" : \"witpool-user\",\r\n    \"password\" : \"user123\",\r\n    \"tokenId\" : null,\r\n    \"cellPhone\" : \"123456789\",\r\n    \"email\" : \"user@witpool.org\",\r\n    \"time\" : null\r\n  },\r\n  \"instances\" : null,\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}",
+      "headers" : {
+        "Transfer-Encoding" : "chunked",
+        "Date" : "Sat, 11 Nov 2017 14:50:46 GMT",
+        "Content-Type" : "application/json"
+      },
+      "date" : "2017-11-11 22:50:46.724",
+      "time" : 78,
+      "status" : "HTTP/1.1 200 ",
+      "statusCode" : 200,
+      "raw_text" : "== REQUEST  ==\r\n\r\nPOST http://127.0.0.1:8080/wit-rest/account\r\n\r\n-- HEADERS  --\r\nContent-Type : application/json; charset=UTF-8\r\nAccept : application/json\r\n\r\n--   BODY   --\r\n{\n  \"userName\": \"witpool-user\",\n  \"password\": \"user123\",\n  \"cellPhone\": \"123456789\",\n  \"email\": \"user@witpool.org\"\n}\r\n\r\n== RESPONSE ==\r\n\r\nHTTP/1.1 200 \r\n\r\n-- HEADERS  --\r\nTransfer-Encoding : chunked\r\nDate : Sat, 11 Nov 2017 14:50:46 GMT\r\nContent-Type : application/json\r\n\r\n--   BODY   --\r\n{\r\n  \"instance\" : {\r\n    \"userId\" : 2,\r\n    \"userName\" : \"witpool-user\",\r\n    \"password\" : \"user123\",\r\n    \"tokenId\" : null,\r\n    \"cellPhone\" : \"123456789\",\r\n    \"email\" : \"user@witpool.org\",\r\n    \"time\" : null\r\n  },\r\n  \"instances\" : null,\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}\r\n"
+    }
+  }, {
+    "key" : "aeb3d365-6e58-4229-a186-b28e9a5a1c07",
+    "result" : null,
+    "assertBdy" : true,
+    "cause" : null,
+    "request" : {
+      "url" : "http://127.0.0.1:8080/wit-rest/account/all",
+      "method" : "GET",
+      "body" : "",
+      "date" : "2017-11-11 22:51:03.930",
+      "headers" : {
+        "Content-Type" : "application/json; charset=UTF-8",
+        "Accept" : "application/json"
+      },
+      "cookies" : { }
+    },
+    "response" : {
+      "body" : "{\r\n  \"instance\" : null,\r\n  \"instances\" : [ {\r\n    \"userId\" : 1,\r\n    \"userName\" : \"witpool\",\r\n    \"password\" : \"admin123\",\r\n    \"tokenId\" : null,\r\n    \"cellPhone\" : \"123456789\",\r\n    \"email\" : \"test@witpool.org\",\r\n    \"time\" : null\r\n  }, {\r\n    \"userId\" : 2,\r\n    \"userName\" : \"witpool-user\",\r\n    \"password\" : \"user123\",\r\n    \"tokenId\" : null,\r\n    \"cellPhone\" : \"123456789\",\r\n    \"email\" : \"user@witpool.org\",\r\n    \"time\" : null\r\n  } ],\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}",
+      "headers" : {
+        "Transfer-Encoding" : "chunked",
+        "Date" : "Sat, 11 Nov 2017 14:51:03 GMT",
+        "Content-Type" : "application/json"
+      },
+      "date" : "2017-11-11 22:51:03.930",
+      "time" : 63,
+      "status" : "HTTP/1.1 200 ",
+      "statusCode" : 200,
+      "raw_text" : "== REQUEST  ==\r\n\r\nGET http://127.0.0.1:8080/wit-rest/account/all\r\n\r\n-- HEADERS  --\r\nContent-Type : application/json; charset=UTF-8\r\nAccept : application/json\r\n\r\n== RESPONSE ==\r\n\r\nHTTP/1.1 200 \r\n\r\n-- HEADERS  --\r\nTransfer-Encoding : chunked\r\nDate : Sat, 11 Nov 2017 14:51:03 GMT\r\nContent-Type : application/json\r\n\r\n--   BODY   --\r\n{\r\n  \"instance\" : null,\r\n  \"instances\" : [ {\r\n    \"userId\" : 1,\r\n    \"userName\" : \"witpool\",\r\n    \"password\" : \"admin123\",\r\n    \"tokenId\" : null,\r\n    \"cellPhone\" : \"123456789\",\r\n    \"email\" : \"test@witpool.org\",\r\n    \"time\" : null\r\n  }, {\r\n    \"userId\" : 2,\r\n    \"userName\" : \"witpool-user\",\r\n    \"password\" : \"user123\",\r\n    \"tokenId\" : null,\r\n    \"cellPhone\" : \"123456789\",\r\n    \"email\" : \"user@witpool.org\",\r\n    \"time\" : null\r\n  } ],\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}\r\n"
+    }
+  }, {
+    "key" : "8f19afcc-b80e-4275-a493-59ddaf268ff9",
+    "result" : null,
+    "assertBdy" : true,
+    "cause" : null,
+    "request" : {
+      "url" : "http://127.0.0.1:8080/wit-rest/account/2",
+      "method" : "GET",
+      "body" : "",
+      "date" : "2017-11-11 22:51:18.898",
+      "headers" : {
+        "Content-Type" : "application/json; charset=UTF-8",
+        "Accept" : "application/json"
+      },
+      "cookies" : { }
+    },
+    "response" : {
+      "body" : "{\r\n  \"instance\" : {\r\n    \"userId\" : 2,\r\n    \"userName\" : \"witpool-user\",\r\n    \"password\" : \"user123\",\r\n    \"tokenId\" : null,\r\n    \"cellPhone\" : \"123456789\",\r\n    \"email\" : \"user@witpool.org\",\r\n    \"time\" : null\r\n  },\r\n  \"instances\" : null,\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}",
+      "headers" : {
+        "Transfer-Encoding" : "chunked",
+        "Date" : "Sat, 11 Nov 2017 14:51:18 GMT",
+        "Content-Type" : "application/json"
+      },
+      "date" : "2017-11-11 22:51:18.898",
+      "time" : 63,
+      "status" : "HTTP/1.1 200 ",
+      "statusCode" : 200,
+      "raw_text" : "== REQUEST  ==\r\n\r\nGET http://127.0.0.1:8080/wit-rest/account/2\r\n\r\n-- HEADERS  --\r\nContent-Type : application/json; charset=UTF-8\r\nAccept : application/json\r\n\r\n== RESPONSE ==\r\n\r\nHTTP/1.1 200 \r\n\r\n-- HEADERS  --\r\nTransfer-Encoding : chunked\r\nDate : Sat, 11 Nov 2017 14:51:18 GMT\r\nContent-Type : application/json\r\n\r\n--   BODY   --\r\n{\r\n  \"instance\" : {\r\n    \"userId\" : 2,\r\n    \"userName\" : \"witpool-user\",\r\n    \"password\" : \"user123\",\r\n    \"tokenId\" : null,\r\n    \"cellPhone\" : \"123456789\",\r\n    \"email\" : \"user@witpool.org\",\r\n    \"time\" : null\r\n  },\r\n  \"instances\" : null,\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}\r\n"
+    }
+  }, {
+    "key" : "6fbe75b5-4d19-4006-9227-67c937a266df",
+    "result" : null,
+    "assertBdy" : true,
+    "cause" : null,
+    "request" : {
+      "url" : "http://127.0.0.1:8080/wit-rest/account",
+      "method" : "PUT",
+      "body" : "{\n  \"userId\": \"1\",\n  \"userName\": \"witpool\",\n  \"password\": \"witpool123\",\n  \"tokenId\": \"1e75fab576e015fab67cef1\",\n  \"cellPhone\": \"123456789aaa\",\n  \"email\": \"testupdate@witpool.org\"\n}",
+      "date" : "2017-11-11 22:51:43.328",
+      "headers" : {
+        "Content-Type" : "application/json; charset=UTF-8",
+        "Accept" : "application/json"
+      },
+      "cookies" : { }
+    },
+    "response" : {
+      "body" : "{\r\n  \"instance\" : {\r\n    \"userId\" : 1,\r\n    \"userName\" : \"witpool\",\r\n    \"password\" : \"witpool123\",\r\n    \"tokenId\" : \"1e75fab576e015fab67cef1\",\r\n    \"cellPhone\" : \"123456789aaa\",\r\n    \"email\" : \"testupdate@witpool.org\",\r\n    \"time\" : null\r\n  },\r\n  \"instances\" : null,\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}",
+      "headers" : {
+        "Transfer-Encoding" : "chunked",
+        "Date" : "Sat, 11 Nov 2017 14:51:43 GMT",
+        "Content-Type" : "application/json"
+      },
+      "date" : "2017-11-11 22:51:43.328",
+      "time" : 62,
+      "status" : "HTTP/1.1 200 ",
+      "statusCode" : 200,
+      "raw_text" : "== REQUEST  ==\r\n\r\nPUT http://127.0.0.1:8080/wit-rest/account\r\n\r\n-- HEADERS  --\r\nContent-Type : application/json; charset=UTF-8\r\nAccept : application/json\r\n\r\n--   BODY   --\r\n{\n  \"userId\": \"1\",\n  \"userName\": \"witpool\",\n  \"password\": \"witpool123\",\n  \"tokenId\": \"1e75fab576e015fab67cef1\",\n  \"cellPhone\": \"123456789aaa\",\n  \"email\": \"testupdate@witpool.org\"\n}\r\n\r\n== RESPONSE ==\r\n\r\nHTTP/1.1 200 \r\n\r\n-- HEADERS  --\r\nTransfer-Encoding : chunked\r\nDate : Sat, 11 Nov 2017 14:51:43 GMT\r\nContent-Type : application/json\r\n\r\n--   BODY   --\r\n{\r\n  \"instance\" : {\r\n    \"userId\" : 1,\r\n    \"userName\" : \"witpool\",\r\n    \"password\" : \"witpool123\",\r\n    \"tokenId\" : \"1e75fab576e015fab67cef1\",\r\n    \"cellPhone\" : \"123456789aaa\",\r\n    \"email\" : \"testupdate@witpool.org\",\r\n    \"time\" : null\r\n  },\r\n  \"instances\" : null,\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}\r\n"
+    }
+  }, {
+    "key" : "a06c9a30-0fca-4ffa-9a59-6fa24d12d904",
+    "result" : null,
+    "assertBdy" : true,
+    "cause" : null,
+    "request" : {
+      "url" : "http://127.0.0.1:8080/wit-rest/account/1",
+      "method" : "GET",
+      "body" : "",
+      "date" : "2017-11-11 22:51:55.218",
+      "headers" : {
+        "Content-Type" : "application/json; charset=UTF-8",
+        "Accept" : "application/json"
+      },
+      "cookies" : { }
+    },
+    "response" : {
+      "body" : "{\r\n  \"instance\" : {\r\n    \"userId\" : 1,\r\n    \"userName\" : \"witpool\",\r\n    \"password\" : \"witpool123\",\r\n    \"tokenId\" : \"1e75fab576e015fab67cef1\",\r\n    \"cellPhone\" : \"123456789aaa\",\r\n    \"email\" : \"testupdate@witpool.org\",\r\n    \"time\" : null\r\n  },\r\n  \"instances\" : null,\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}",
+      "headers" : {
+        "Transfer-Encoding" : "chunked",
+        "Date" : "Sat, 11 Nov 2017 14:51:55 GMT",
+        "Content-Type" : "application/json"
+      },
+      "date" : "2017-11-11 22:51:55.218",
+      "time" : 47,
+      "status" : "HTTP/1.1 200 ",
+      "statusCode" : 200,
+      "raw_text" : "== REQUEST  ==\r\n\r\nGET http://127.0.0.1:8080/wit-rest/account/1\r\n\r\n-- HEADERS  --\r\nContent-Type : application/json; charset=UTF-8\r\nAccept : application/json\r\n\r\n== RESPONSE ==\r\n\r\nHTTP/1.1 200 \r\n\r\n-- HEADERS  --\r\nTransfer-Encoding : chunked\r\nDate : Sat, 11 Nov 2017 14:51:55 GMT\r\nContent-Type : application/json\r\n\r\n--   BODY   --\r\n{\r\n  \"instance\" : {\r\n    \"userId\" : 1,\r\n    \"userName\" : \"witpool\",\r\n    \"password\" : \"witpool123\",\r\n    \"tokenId\" : \"1e75fab576e015fab67cef1\",\r\n    \"cellPhone\" : \"123456789aaa\",\r\n    \"email\" : \"testupdate@witpool.org\",\r\n    \"time\" : null\r\n  },\r\n  \"instances\" : null,\r\n  \"code\" : 0,\r\n  \"message\" : \"success\"\r\n}\r\n"
+    }
+  } ]
+}
