@@ -3,7 +3,7 @@ REST API demo with Spring, Hibernate, CXF.
 
 [Full source code（完整的源代码）](https://github.com/witpool/wit-pluto/blob/master/Wit-Pluto-V1.0.zip)
 
-1. You need to install Maven, MYSQL first.<br/>
+1. You need to install `Java 1.8, Maven, MYSQL` first.<br/>
 
 2. [Wit-Pluto-Tree](https://github.com/witpool/wit-pluto/blob/master/wit-pluto-tree.txt)<br/>
 `# ls` <br/>
