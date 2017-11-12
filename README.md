@@ -21,7 +21,7 @@ RESTful API demo with `Spring, Hibernate, CXF`.
 Then restart your application server.
 
 6. UT by [WisdomTool REST Client](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar)
-Import testing [case file](https://github.com/witpool/wit-pluto/blob/master/history-cases.json)
+Import testing [case files.](https://github.com/witpool/wit-pluto/blob/master/history-cases.json)
 ![image](https://github.com/witpool/wit-pluto/blob/master/import.png)
 
 More about the usages of the tool, please visit [WisdomTool REST Client](https://github.com/wisdomtool/rest-client)
