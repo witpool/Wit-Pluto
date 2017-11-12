@@ -9,8 +9,8 @@ REST API demo with Spring, Hibernate, CXF.
 `# ls` <br/>
 `pom.xml  wit-common  wit-persist  wit-rest` <br/>
 3. Update the below configurations with your real account to `wit-rest/src/main/resources/resources.properties`<br/>
-`connection.username=xxx<br/>`
-`connection.password=xxx<br/>`
+`connection.username=xxx`<br/>
+`connection.password=xxx`<br/>
 
 4. Package wit-pluto with maven tools.<br/>
 `# mvn clean package`<br/>
