@@ -6,20 +6,20 @@ REST API demo with Spring, Hibernate, CXF.
 1. You need to install Maven, MYSQL first.<br/>
 
 2. [Wit-Pluto-Tree](https://github.com/witpool/wit-pluto/blob/master/wit-pluto-tree.txt)<br/>
-...Bash
+` ``Bash
 ls<br/>
 pom.xml  wit-common  wit-persist  wit-rest\<br>
-...
+` ``
 3. Update the below configurations with your real account to wit-rest/src/main/resources/resources.properties<br/>
-...Bash
+` ``Bash
 connection.username=xxx<br/>
 connection.password=xxx<br/>
-...
+` ``
 4. Package wit-pluto with maven tools.<br/>
-...Bash
+` ``Bash
 mvn clean package<br/>
 ls wit-rest/target/wit-rest.war<br/>
 wit-rest/target/wit-rest.war<br/>
-...
+` ``
 5.Copy wit-rest.war to your application server.<br/>
 Then restart your application server.
