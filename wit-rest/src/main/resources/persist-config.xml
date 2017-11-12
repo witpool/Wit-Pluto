@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd        ">  
+    <!-- Scan Bean -->  
+    <context:component-scan base-package="org.witpool.common.model.po"> 
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/> 
+    </context:component-scan>  
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+        <property name="locations"> 
+            <list> 
+                <value>classpath:resources.properties</value> 
+            </list> 
+        </property> 
+    </bean>  
+    <bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource"> 
+        <property name="alias" value="proxoolDataSource"/>  
+        <property name="driver" value="${connection.driver_class}"/>  
+        <property name="driverUrl" value="${connection.url}"/>  
+        <property name="user" value="${connection.username}"/>  
+        <property name="password" value="${connection.password}"/>  
+        <property name="maximumConnectionCount" value="${proxool.maximum.connection.count}"/>  
+        <property name="minimumConnectionCount" value="${proxool.minimum.connection.count}"/>  
+        <property name="statistics" value="${proxool.statistics}"/>  
+        <property name="simultaneousBuildThrottle" value="${proxool.simultaneous.build.throttle}"/> 
+    </bean>  
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
+        <property name="dataSource" ref="dataSource"/>  
+        <property name="packagesToScan"> 
+            <list> 
+                <value>org.witpool.common.model.po</value> 
+            </list> 
+        </property>  
+        <property name="hibernateProperties"> 
+            <props> 
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>  
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>  
+                <prop key="hibernate.format_sql">true</prop>  
+                <prop key="hibernate.query.substitutions">${hibernate.query.substitutions}</prop>  
+                <prop key="hibernate.default_batch_fetch_size">${hibernate.default_batch_fetch_size}</prop>  
+                <prop key="hibernate.max_fetch_depth">${hibernate.max_fetch_depth}</prop>  
+                <prop key="hibernate.generate_statistics">${hibernate.generate_statistics}</prop>  
+                <prop key="hibernate.bytecode.use_reflection_optimizer">${hibernate.bytecode.use_reflection_optimizer}</prop>  
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.bytecode.use_reflection_optimizer}</prop>  
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop> 
+            </props> 
+        </property> 
+    </bean>  
+ 
+    <tx:annotation-driven transaction-manager="transactionManager"/>  
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"> 
+        <property name="sessionFactory" ref="sessionFactory"/> 
+    </bean>  
+    <aop:config> 
+        <aop:pointcut id="rest-api" expression="execution(* org.witpool.rest.*.*(..))"/>  
+        <aop:advisor pointcut-ref="rest-api" advice-ref="txAdvice"/> 
+    </aop:config>  
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager"> 
+        <tx:attributes> 
+            <tx:method name="find*" read-only="false" propagation="NOT_SUPPORTED"/>  
+            <tx:method name="query*" read-only="false" propagation="NOT_SUPPORTED"/>  
+            <tx:method name="get*" read-only="false" propagation="NOT_SUPPORTED"/>  
+            <tx:method name="add" propagation="REQUIRED"/>  
+            <tx:method name="add*" propagation="REQUIRED"/>  
+            <tx:method name="update*" propagation="REQUIRED"/>  
+            <tx:method name="delete" propagation="REQUIRED"/>  
+            <tx:method name="delete*" propagation="REQUIRED"/>  
+            <tx:method name="save" propagation="REQUIRED"/>  
+            <tx:method name="save*" propagation="REQUIRED"/>  
+            <tx:method name="*" propagation="REQUIRED"/> 
+        </tx:attributes> 
+    </tx:advice> 
+    <bean id="baseDao" class="org.witpool.persist.dao.impl.BaseDaoImpl"> 
+        <property name="sessionFactory" ref="sessionFactory"/>  
+        <property name="baseDao" ref="baseDao"/> 
+    </bean> 
+</beans>

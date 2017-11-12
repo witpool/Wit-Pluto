@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="error" strict="true"> 
+    <Properties> 
+        <Property name="filename">logs/witpool-rest.log</Property> 
+    </Properties>  
+    <Appenders> 
+        <Console name="Console" target="SYSTEM_OUT"/>  
+        <RollingFile name="WIT_APPEND" fileName="${filename}" append="true" filePattern="${filename}-%i.log"> 
+            <PatternLayout> 
+                <Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}]-[%p]-[%l] %m%n</Pattern> 
+            </PatternLayout>  
+            <Policies> 
+                <SizeBasedTriggeringPolicy size="10 MB"/> 
+            </Policies>  
+            <DefaultRolloverStrategy max="5"/> 
+        </RollingFile> 
+    </Appenders>  
+    <Loggers> 
+        <Logger name="org.witpool" level="info" additivity="false"> 
+            <AppenderRef ref="WIT_APPEND"/> 
+        </Logger>  
+        <Logger name="org.apache.commons" level="error" additivity="false"> 
+            <AppenderRef ref="WIT_APPEND"/> 
+        </Logger>  
+        <Logger name="org.apache.http" level="error" additivity="false"> 
+            <AppenderRef ref="WIT_APPEND"/> 
+        </Logger>  
+        <Logger name="com.fasterxml.jackson" level="error" additivity="false"> 
+            <AppenderRef ref="WIT_APPEND"/> 
+        </Logger>  
+        <Logger name="org.springframework" level="error" additivity="false"> 
+            <AppenderRef ref="WIT_APPEND"/> 
+        </Logger>  
+        <Logger name="org.hibernate" level="error" additivity="false"> 
+            <AppenderRef ref="WIT_APPEND"/> 
+        </Logger>  
+        <Logger name="org.apache.cxf" level="error" additivity="false"> 
+            <AppenderRef ref="WIT_APPEND"/> 
+        </Logger>  
+        <Root level="all"> 
+            <AppenderRef ref="WIT_APPEND"/> 
+        </Root> 
+    </Loggers> 
+</Configuration>

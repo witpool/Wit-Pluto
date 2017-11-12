@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:cxf="http://cxf.apache.org/core" xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans                     http://www.springframework.org/schema/beans/spring-beans.xsd                     http://www.springframework.org/schema/util                      http://www.springframework.org/schema/util/spring-util.xsd                     http://cxf.apache.org/jaxrs                     http://cxf.apache.org/schemas/jaxrs.xsd">  
+    <import resource="classpath*:META-INF/cxf/cxf.xml"/>  
+    <import resource="classpath*:META-INF/cxf/cxf-servlet.xml"/>  
+    <import resource="classpath:persist-config.xml"/>  
+    <jaxrs:server id="witpool" address="/"> 
+        <jaxrs:inInterceptors> 
+            <bean class="org.apache.cxf.interceptor.LoggingInInterceptor"/> 
+        </jaxrs:inInterceptors>  
+        <jaxrs:outInterceptors> 
+            <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"/> 
+        </jaxrs:outInterceptors>  
+        <jaxrs:providers> 
+            <ref bean="jacksonProvider"/> 
+        </jaxrs:providers>  
+        <jaxrs:extensionMappings> 
+            <entry key="json" value="application/json"/>  
+            <entry key="xml" value="application/xml"/>
+        </jaxrs:extensionMappings>  
+        <jaxrs:serviceBeans> 
+            <ref bean="witAccount"/>  
+        </jaxrs:serviceBeans> 
+    </jaxrs:server>  
+    <bean id="jaxbAnnotationIntrospector" class="com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector"/>  
+    <bean id="jsonmapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean" p:annotationIntrospector-ref="jaxbAnnotationIntrospector"> 
+        <property name="featuresToEnable"> 
+            <array> 
+                <util:constant static-field="com.fasterxml.jackson.databind.SerializationFeature.INDENT_OUTPUT"/>  
+                <util:constant static-field="com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS"/> 
+            </array> 
+        </property>  
+        <property name="featuresToDisable"> 
+            <array> 
+                <util:constant static-field="com.fasterxml.jackson.databind.SerializationFeature.WRITE_NULL_MAP_VALUES"/>  
+                <util:constant static-field="com.fasterxml.jackson.databind.SerializationFeature.WRITE_EMPTY_JSON_ARRAYS"/> 
+            </array> 
+        </property>  
+        <property name="objectMapper"> 
+            <bean class="com.fasterxml.jackson.databind.ObjectMapper"></bean> 
+        </property>
+    </bean>
+    <bean id="jacksonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider"> 
+        <property name="mapper" ref="jsonmapper"/> 
+    </bean>  
+    <bean id="witAccount" class="org.witpool.rest.impl.WitAccountImpl"/>  
+</beans>
