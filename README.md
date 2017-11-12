@@ -12,7 +12,7 @@ RESTful API demo with `Spring, Hibernate, CXF`.
 `connection.username=xxx`<br/>
 `connection.password=xxx`<br/>
 
-4. Package wit-pluto with maven tools.<br/>
+4. Package `wit-pluto` with `maven` tools.<br/>
 `# mvn clean package`<br/>
 `# ls wit-rest/target/wit-rest.war`<br/>
 `wit-rest/target/wit-rest.war`<br/>
