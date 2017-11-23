@@ -23,4 +23,7 @@ Then restart your application server.
 6. UT by [WisdomTool REST Client](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar)
 , import testing [case file.](https://github.com/witpool/wit-pluto/blob/master/Wit-Pluto-Cases.json)
 ![image](https://github.com/witpool/wit-pluto/blob/master/Wit-RESTClient.png)<br/>
-More about the usages of the tool, please visit [WisdomTool REST Client](https://github.com/wisdomtool/rest-client)
+More about the usages of the tool, please visit [WisdomTool REST Client](https://github.com/wisdomtool/rest-client)<br/>
+
+7. [Technical Exchange Group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)<br/>
+![Technical Exchange Group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)
