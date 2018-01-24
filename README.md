@@ -1,8 +1,6 @@
 # Wit-Pluto
 RESTful API demo with `Spring, Hibernate, CXF`.
 
-[Full source code（完整的源代码）](https://github.com/witpool/wit-pluto/blob/master/Wit-Pluto-V1.0.zip)
-
 1. You need to install `Java 1.8.0 or above, Maven 3.2.1 or above, MYSQL` first.<br/>
 
 2. [Wit-Pluto-Tree](https://github.com/witpool/wit-pluto/blob/master/Wit-Pluto-Tree.txt)<br/>
