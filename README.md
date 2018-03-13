@@ -18,10 +18,8 @@ RESTful API demo with `Spring, Hibernate, CXF`.
 5. Copy `wit-rest.war` to your application server.<br/>
 Then restart your application server.
 
-6. UT by [WisdomTool REST Client](https://github.com/wisdomtool/rest-client/blob/master/restclient-1.1.jar)
+6. UT by [Wisdom RESTClient](https://github.com/Wisdom-Projects/rest-client/blob/master/tools/restclient-1.2.jar)
 , import testing [case file.](https://github.com/witpool/wit-pluto/blob/master/Wit-Pluto-Cases.json)
 ![image](https://github.com/witpool/wit-pluto/blob/master/Wit-RESTClient.png)<br/>
-More about the usages of the tool, please visit [WisdomTool REST Client](https://github.com/wisdomtool/rest-client)<br/>
+More about the usages of the tool, please visit [Wisdom RESTClient](https://github.com/Wisdom-Projects/rest-client)<br/>
 
-7. [Technical Exchange Group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)<br/>
-![Technical Exchange Group (技术交流QQ群)](https://github.com/wisdomtool/rest-client/blob/master/images/qq-group.png)
